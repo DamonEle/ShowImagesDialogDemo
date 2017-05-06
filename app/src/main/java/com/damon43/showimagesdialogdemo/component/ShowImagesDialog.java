@@ -34,7 +34,7 @@ import uk.co.senab.photoview.PhotoViewAttacher;
 
 public class ShowImagesDialog extends Dialog {
 
-    private View mView;
+    private View mView ;
     private Context mContext;
     private ShowImagesViewPager mViewPager;
     private TextView mIndexText;
