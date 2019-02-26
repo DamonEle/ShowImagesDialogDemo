@@ -74,6 +74,7 @@ public class ShowImagesDialog extends Dialog {
     }
 
     private void initData() {
+        //点击图片监听
         PhotoViewAttacher.OnPhotoTapListener listener = new PhotoViewAttacher.OnPhotoTapListener() {
             @Override
             public void onPhotoTap(View view, float x, float y) {
@@ -85,6 +86,15 @@ public class ShowImagesDialog extends Dialog {
             ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
             photoView.setLayoutParams(layoutParams);
             photoView.setOnPhotoTapListener(listener);
+            //点击图片外围（无图片处）监听
+            /**
+            photoView.setOnViewTapListener(new OnViewTapListener() {
+            @Override
+            public void onViewTap(View view, float x, float y){
+                dismiss();
+            }
+        });
+            **/
             Glide.with(mContext)
                     .load(mImgUrls.get(i))
                     .placeholder(R.mipmap.ic_launcher)
